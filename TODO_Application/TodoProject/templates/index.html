@@ -1,0 +1,58 @@
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>TODO Application</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'image/favicon.ico' %}"/>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
+    <script> var __basePath = '';</script>
+</head>
+<body>
+<h1 align="center">TODO Application</h1>
+<p align="center">A single place to manage all your TODOs</p>
+
+<div class="container">
+    <h3>Tasks</h3>
+    <ul class="nav nav-pills">
+        <li class="active" id="all_tab_id" onclick="externalFilterChanged('all')"><a href="#">All</a></li>
+        <li><a href="#" id="active_tab_id" onclick="externalFilterChanged('active')">Active</a></li>
+        <li><a href="#" id="archived_tab_id" onclick="externalFilterChanged('archive')">Archived</a></li>
+    </ul>
+    <ul>
+        <button id="archive_task_id">Archive Task</button>
+        <button id="delete_task_id">Delete Task</button>
+        <button id="create_task_id">Create Task</button>
+    </ul>
+    <div id="table_grid_id" style="height: 480px;" class="ag-theme-balham"></div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 align="center">New Task Details</h3>
+        <div>
+            <label for="title_id">Title: </label>
+            <input id="title_id" type="text" name="title_field" value="Task title">
+            <label for="description_id">Description: </label>
+            <input id="description_id" type="text" name="description_field" value="Description" size="45">
+            <label for="target_date_id">Target Date: </label>
+            <input id="target_date_id" type="text" name="target_date_field" value={% now "Y-m-j" %}>
+            <input type="submit" value="submit" id="create_task_form_id">
+        </div>
+    </div>
+</div>
+</body>
+<script src='{% static "js/lib/ag-grid-enterprise.min.js"%}'></script>
+<script src='{% static "js/lib/ag-grid-enterprise.min.noStyle.js"%}'></script>
+<script src='{% static "js/lib/jquery-3.4.1.min.js"%}'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src='https://unpkg.com/@ag-grid-enterprise/all-modules@22.1.2/dist/ag-grid-enterprise.min.js'></script>
+<script src='{% static "js/todo.js"%}'></script>
+</html>
