@@ -1,0 +1,53 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cluster Management Portal</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'image/favicon.ico' %}"/>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <script>
+        var __basePath = '';
+        var is_staff = '{{user.is_staff  }}';
+    </script>
+</head>
+<body>
+<h1 align="center" style="color: blue;">Cluster Management Portal</h1>
+<p align="center">A single place to manage all your Clusters</p>
+<br>
+<div>
+    <p align="left"> Logged In User Name: <strong>{{ user.get_username }}</strong></p>
+    <p align="left"> Has write access : <strong>{{ user.is_staff }}</strong></p>
+
+</div>
+<br>
+<div align="center" class="container">
+    {% if user.is_staff %}
+        <ul>
+            <button id="delete_cluster_id">Delete Cluster</button>
+            <button id="create_cluster_id">Create Cluster</button>
+        </ul>
+    {% endif %}
+
+    <div id="table_grid_id" style="height: 400px;width:450px;align-content: center;" class="ag-theme-balham"></div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 align="center">New Cluster Details</h3>
+        <div>
+            <label for="cluster_name_id">Title: </label>
+            <input id="cluster_name_id" type="text" name="cluster_name_field" value="Cluster Name">
+            <label for="nodes_count_id">Nodes Count: </label>
+            <input id="nodes_count_id" type="text" name="nodes_count_field" value="0" size="45">
+            <input type="submit" value="submit" id="create_cluster_form_id">
+        </div>
+    </div>
+</div>
+</body>
+<script src='{% static "js/lib/ag-grid-enterprise.min.js" %}'></script>
+<script src='{% static "js/lib/ag-grid-enterprise.min.noStyle.js" %}'></script>
+<script src='{% static "js/lib/jquery-3.4.1.min.js" %}'></script>
+<script src='{% static "js/index.js" %}'></script>
+</html>

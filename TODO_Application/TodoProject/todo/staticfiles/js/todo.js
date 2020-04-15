@@ -236,7 +236,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         url: window.origin + '/todo/tasks_api/',
                         headers: {'X-CSRFToken': getCookie('csrftoken')},
                         data: JSON.stringify(changed_row_data[params.data.id]),
-//                        data: JSON.stringify({'name': 'Udhay'}) ,
                         contentType: 'application/json;charset=utf-8',
                         dataType: 'json',
                         success: function(result) {
