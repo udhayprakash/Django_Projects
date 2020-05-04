@@ -17,6 +17,7 @@ class ClusterDetailsView(viewsets.ModelViewSet):
 
 class ClustersView(GenericAPIView):
     http_method_names = ('post', 'create')
+    serializer_class = ClusterDetailsSerializer
 
     def post(self, request, **kwargs):
         print('ClustersView - post')
