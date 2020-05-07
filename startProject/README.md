@@ -168,12 +168,22 @@ Step 19:  Install ipython and go to shell to see the ipython interactive django 
             - nosetest
             
 
------------------
-Opening shell in Jupyter notebook (https://davit.tech/django-jupyter-notebook/)
+Step 20: Opening shell in Jupyter notebook (https://davit.tech/django-jupyter-notebook/)
     pip install django jupyter ipython django-extensions
 
     Add 'django-extensions' in settings.py/INSTALLED_APPS
 
     python manage.py shell_plus --notebook
 
-    
+    Add below environment variable
+    os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+
+
+-----------------
+user authentition and authorization 
+middleware 
+session management
+
+
+mixin
+API 
