@@ -14,7 +14,7 @@ __pycache__/
 
 # Django static files
 static/
-
+admin/
 # C extensions
 *.so
 
@@ -166,3 +166,7 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Local Logic Related
+http_status_dogs
+https_status_images
