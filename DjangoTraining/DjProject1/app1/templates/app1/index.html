@@ -1,0 +1,9 @@
+{% if latest_question_list %}
+    
+    {% for question in latest_question_list %}
+    <ul>{{ question.question_text }}</ul>
+    {% endfor %}
+    
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

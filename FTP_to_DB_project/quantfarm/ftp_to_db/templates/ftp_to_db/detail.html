@@ -1,0 +1,24 @@
+{% extends 'ftp_to_db/base.html' %}
+
+{% block content %}
+
+<h3>ETL JOB Details</h3> 
+<br>
+<div>
+    <div>ftp_url         : <strong>{{etl_job.ftp_url}}</strong></div>
+    <div>ftp_username    : <strong>{{etl_job.ftp_username}}</strong></div>
+    <div>ftp_password    : <strong>{{etl_job.ftp_password}}</strong></div>
+    <div>ftp_filename    : <strong>{{etl_job.ftp_filename}}</strong></div>
+    <br>
+    <div>ETL JOB STATUS  : <strong>{{etl_job.status}}</strong></div>
+    {%if etl_job.status != 'Running' %}
+        <div>Start Time      : <strong>{{etl_job.start_time}} UTC</strong></div>
+        <div>End Time        : <strong>{{etl_job.end_time}} UTC</strong></div>
+        <div>Execution Time  : <strong>{{etl_job.execution_time_sec}}</strong></div>
+    {% else %}
+        <br>
+        <br>
+        <h3 style="color: yellowgreen;"><strong>Please check after sometime</strong></h3>
+    {% endif %}
+    </div>
+{% endblock %}

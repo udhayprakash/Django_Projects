@@ -170,3 +170,8 @@ GitHub.sublime-settings
 # Local Logic Related
 http_status_dogs
 https_status_images
+
+**/migrations
+*.DS_Store
+**/__pycache__
+**/.DS_Store
