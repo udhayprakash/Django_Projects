@@ -17,6 +17,7 @@ django-crispy-forms = "^2.0"
 pandas = "^2.0.0"
 requests = "^2.28.2"
 pydotenv = "^0.0.7"
+python-dotenv = "^1.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
