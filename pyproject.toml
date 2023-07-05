@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "django-projects"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Udhay Prakash Pethakamsetty <uday3prakash@gmail.com>"]
 readme = "README.md"
 packages = [{include = "django_projects"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.10.8"
 django = "^4.2"
 djangorestframework = "^3.14.0"
 mysqlclient = "^2.1.1"
