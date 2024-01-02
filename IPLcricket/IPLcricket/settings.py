@@ -148,3 +148,4 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 DOCS_PATH = os.path.join(os.path.dirname(BASE_DIR), 'IPLcricket', 'docs')
+SESSION_COOKIE_SECURE = True

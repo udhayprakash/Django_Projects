@@ -128,3 +128,4 @@ STATIC_URL = '/static/'
 if DEBUG:
     # shell_plus related 
     os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+SESSION_COOKIE_SECURE = True
