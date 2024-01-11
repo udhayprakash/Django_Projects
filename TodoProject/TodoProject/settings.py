@@ -145,3 +145,4 @@ REST_FRAMEWORK = {
 LANGUAGES = (
     ('en', 'English'),
 )
+SESSION_COOKIE_SECURE = True
