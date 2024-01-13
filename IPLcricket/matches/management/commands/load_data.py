@@ -63,8 +63,7 @@ class Command(BaseCommand):
         parser.add_argument('file_name', type=str, help='file to load')
 
     def handle(self, *args, **kwargs):
-        file_name = kwargs.get('file_name')
-        if file_name == 'matches.csv':
+        if (file_name := kwargs.get('file_name')) == 'matches.csv':
             load_matches(file_name)
         elif file_name == 'deliveries.csv':
             load_deliveries(file_name)
