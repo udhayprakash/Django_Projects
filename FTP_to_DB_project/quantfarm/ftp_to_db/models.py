@@ -6,6 +6,11 @@ class AmountInfo(models.Model):
     legal = models.PositiveIntegerField()
     gl_amount_balance = models.FloatField()
 
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
+
 
 class FTPCredentials(models.Model):
     ftp_url= models.CharField(max_length=80, help_text='FTP URL to login', default='ftp.quantfarm.com')
@@ -33,3 +38,8 @@ class FTPCredentials(models.Model):
         #     ftp_filename = 'Temp_File.csv'
         # )
         return reverse('detail_view', args=[str(self.id)])
+
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
