@@ -22,6 +22,11 @@ class MatchesPlayed(models.Model):
     umpire2 = models.CharField(max_length=30, blank=True)
     umpire3 = models.CharField(max_length=30, blank=True)
 
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
+
 
 class Deliveries(models.Model):
     id = models.AutoField(primary_key=True)
@@ -46,3 +51,8 @@ class Deliveries(models.Model):
     player_dismissed = models.CharField(max_length=30)
     dismissal_kind = models.CharField(max_length=30)
     fielder = models.CharField(max_length=30)
+
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
