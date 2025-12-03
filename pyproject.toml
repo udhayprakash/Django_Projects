@@ -12,7 +12,7 @@ python = "^3.10"
 python-dotenv = "^1.0.0"
 requests = "^2.31.0"
 pandas = "^2.0.3"
-django = "^4.2.3"
+django = "^4.2.27"
 djangorestframework = "^3.14.0"
 
 
