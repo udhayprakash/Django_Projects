@@ -8,12 +8,12 @@ readme = "README.md"
 packages = [{include = "django_projects"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
-python-dotenv = "^1.0.0"
-requests = "^2.31.0"
-pandas = "^2.0.3"
+python = "^3.12"
+python-dotenv = "^1.2.3"
+requests = "^2.34.2"
+pandas = "^2.3.3"
 django = "4.2.27"
-djangorestframework = "^3.14.0"
+djangorestframework = "^3.17.2"
 
 
 [build-system]
